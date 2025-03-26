@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Store</title>
+        <style>
+            /* General body styling */
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f9;
+                color: #333;
+                text-align: center;
+            }
+
+            /* Header styling */
+            h2 {
+                background-color: #4CAF50;
+                color: white;
+                padding: 20px 0;
+                margin: 0;
+                font-size: 2em;
+            }
+
+            /* Search input styling */
+            #searchInput {
+                width: 60%;
+                padding: 10px;
+                margin: 20px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+
+            /* Book list container styling */
+            #bookList {
+                margin: 20px auto;
+                width: 80%;
+                max-width: 800px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+
+            /* Individual book item styling */
+            .book-item {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .book-item:last-child {
+                border-bottom: none;
+            }
+
+            .book-item strong {
+                font-size: 1.2em;
+                color: #4CAF50;
+            }
+
+            /* Button styling */
+            .book-item button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 0.9em;
+                transition: background-color 0.3s ease;
+            }
+
+            .book-item button:hover {
+                background-color: #45a049;
+            }
+
+            /* Shopping cart section styling */
+            h3 {
+                margin-top: 40px;
+                font-size: 1.5em;
+                color: #4CAF50;
+            }
+
+            #cartList {
+                list-style: none;
+                padding: 0;
+                margin: 20px auto;
+                width: 80%;
+                max-width: 800px;
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            #cartList li {
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #cartList li:last-child {
+                border-bottom: none;
+            }
+
+            #cartList button {
+                background-color: #f44336;
+                color: white;
+                border: none;
+                padding: 8px 12px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 0.9em;
+                transition: background-color 0.3s ease;
+            }
+
+            #cartList button:hover {
+                background-color: #e53935;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                #searchInput {
+                    width: 90%;
+                }
+
+                #bookList, #cartList {
+                    width: 90%;
+                }
+
+                .book-item {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .book-item button {
+                    margin-top: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Main heading for the Book Store -->
+        <h2>Welcome to Eluah's Book Store</h2>
+
+        <!-- Search input field for filtering books -->
+        <input type="text" id="searchInput" placeholder="Search books..." onkeyup="filterBooks()">
+
+        <!-- Container for dynamically displaying the list of books -->
+        <div id="bookList"></div>
+
+        <!-- Section for displaying the shopping cart -->
+        <h3>Shopping Cart</h3>
+        <ul id="cartList"></ul>
+
+        <!-- Link to the external JavaScript file -->
+        <script src="script.js"></script>
+    </body>
+</html>
